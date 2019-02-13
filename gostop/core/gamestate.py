@@ -64,21 +64,22 @@ class GameState(object):
         """Reset the game state for the beginning of a new game, and deal
         cards to each player.
         """
-        state = GameStatePlay()
+        state: GameStatePlay = GameStatePlay()
         state.deck.shuffle()
 
-        for i in range(0, 2):
+        for _ in range(0, 2):  # 2번 반복하는 이유: 실제 패 분배 방식과 동일하게 하기 위해
             for p in range(0, state.number_of_players):
                 state.player_hands[p] += state.deck.pop()
                 state.player_hands[p] += state.deck.pop()
                 state.player_hands[p] += state.deck.pop()
                 state.player_hands[p] += state.deck.pop()
                 state.player_hands[p] += state.deck.pop()
+                state.player_hands[p].cards = sorted(state.player_hands[p].cards, key=lambda card: card.month)
             state.table_cards += state.deck.pop()
             state.table_cards += state.deck.pop()
             state.table_cards += state.deck.pop()
             state.table_cards += state.deck.pop()
-
+            state.table_cards.cards = sorted(state.table_cards.cards, key=lambda card: card.month)
         return state
 
     def copy_and_randomise(self, observer):
