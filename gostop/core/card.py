@@ -1,6 +1,3 @@
-from .utils import _
-
-
 class Card(object):
     def __init__(self, name, month, group):
         self.name = name
@@ -54,54 +51,54 @@ class Group(object):
     JUNK_2 = 5
 
 
-CRANE = Card(_(u'Pine and Crane'), Month.JAN, Group.BRIGHT)
-PINE_RED_POEM = Card(_(u'Pine and Red Poem Ribbon'), Month.JAN, Group.RIBBON)
-PINE = Card(_(u'Pine'), Month.JAN, Group.JUNK)
+CRANE = Card('송학 - 광', Month.JAN, Group.BRIGHT)
+PINE_RED_POEM = Card('송학 - 홍단', Month.JAN, Group.RIBBON)
+PINE = Card('송학 - 피', Month.JAN, Group.JUNK)
 
-BUSH_WARBLER = Card(_(u'Plum Blossom and Bush Warbler'), Month.FEB, Group.ANIMAL)
-PLUM_RED_POEM = Card(_(u'Plum Blossom and Red Poem Ribbon'), Month.FEB, Group.RIBBON)
-PLUM = Card(_(u'Plum Blossom'), Month.FEB, Group.JUNK)
+BUSH_WARBLER = Card('매조 - 끗', Month.FEB, Group.ANIMAL)
+PLUM_RED_POEM = Card('매조 - 홍단', Month.FEB, Group.RIBBON)
+PLUM = Card('매조 - 피', Month.FEB, Group.JUNK)
 
-CURTAIN = Card(_(u'Cherry Blossom and Curtain'), Month.MAR, Group.BRIGHT)
-CHERRY_RED_POEM = Card(_(u'Cherry Blossom and Red Poem Ribbon'), Month.MAR, Group.RIBBON)
-CHERRY = Card(_(u'Cherry Blossom'), Month.MAR, Group.JUNK)
+CURTAIN = Card('벚꽃 - 광', Month.MAR, Group.BRIGHT)
+CHERRY_RED_POEM = Card('벚꽃 - 홍단', Month.MAR, Group.RIBBON)
+CHERRY = Card('벚꽃 - 피', Month.MAR, Group.JUNK)
 
-CUCKOO = Card(_(u'Wisteria and Cuckoo'), Month.APR, Group.ANIMAL)
-WISTERIA_RED = Card(_(u'Wisteria and Red Ribbon'), Month.APR, Group.RIBBON)
-WISTERIA = Card(_(u'Wisteria'), Month.APR, Group.JUNK)
+CUCKOO = Card('흑싸리 - 끗', Month.APR, Group.ANIMAL)
+WISTERIA_RED = Card('흑싸리 - 초단', Month.APR, Group.RIBBON)
+WISTERIA = Card('흑싸리 - 피', Month.APR, Group.JUNK)
 
-BRIDGE = Card(_(u'Iris and Bridge'), Month.MAY, Group.ANIMAL)
-IRIS_RED = Card(_(u'Iris and Red Ribbon'), Month.MAY, Group.RIBBON)
-IRIS = Card(_(u'Iris'), Month.MAY, Group.JUNK)
+BRIDGE = Card('난초 - 끗', Month.MAY, Group.ANIMAL)
+IRIS_RED = Card('난초 - 초단', Month.MAY, Group.RIBBON)
+IRIS = Card('난초 - 피', Month.MAY, Group.JUNK)
 
-BUTTERFLY = Card(_(u'Peony and Butterfly'), Month.JUN, Group.ANIMAL)
-PEONY_BLUE_POEM = Card(_(u'Peony and Blue Poem Ribbon'), Month.JUN, Group.RIBBON)
-PEONY = Card(_(u'Peony'), Month.JUN, Group.JUNK)
+BUTTERFLY = Card('모란 - 끗', Month.JUN, Group.ANIMAL)
+PEONY_BLUE_POEM = Card('모란 - 청단', Month.JUN, Group.RIBBON)
+PEONY = Card('모란 - 피', Month.JUN, Group.JUNK)
 
-BOAR = Card(_(u'Bush Clover and Boar'), Month.JUL, Group.ANIMAL)
-BUSH_CLOVER_RED = Card(_(u'Bush Clover and Red Ribbon'), Month.JUL, Group.RIBBON)
-BUSH_CLOVER = Card(_(u'Bush Clover'), Month.JUL, Group.JUNK)
+BOAR = Card('홍싸리 - 끗', Month.JUL, Group.ANIMAL)
+BUSH_CLOVER_RED = Card('홍싸리 - 초단', Month.JUL, Group.RIBBON)
+BUSH_CLOVER = Card('홍싸리 - 피', Month.JUL, Group.JUNK)
 
-MOON = Card(_(u'Pampas Grass and Moon'), Month.AUG, Group.BRIGHT)
-GEESE = Card(_(u'Pampas Grass and Geese'), Month.AUG, Group.ANIMAL)
-PAMPAS_GRASS = Card(_(u'Pampas Grass'), Month.AUG, Group.JUNK)
+MOON = Card('공산 - 광', Month.AUG, Group.BRIGHT)
+GEESE = Card('공산 - 끗', Month.AUG, Group.ANIMAL)
+PAMPAS_GRASS = Card('공산 - 피', Month.AUG, Group.JUNK)
 
-CUP = Card(_(u'Chrysanthemum and Cup'), Month.SEP, (Group.ANIMAL, Group.JUNK_2))
-CHRYSANTHEMUM_BLUE_PEOM = Card(_(u'Chrysanthemum and Blue Poem Ribbon'), Month.SEP, Group.RIBBON)
-CHRYSANTHEMUM = Card(_(u'Chrysanthemum'), Month.SEP, Group.JUNK)
+CUP = Card('국진 - 끗(쌍피)', Month.SEP, (Group.ANIMAL, Group.JUNK_2))
+CHRYSANTHEMUM_BLUE_PEOM = Card('국진 - 청단', Month.SEP, Group.RIBBON)
+CHRYSANTHEMUM = Card('국진 - 피', Month.SEP, Group.JUNK)
 
-DEER = Card(_(u'Maple and Deer'), Month.OCT, Group.ANIMAL)
-MAPLE_BLUE_POEM = Card(_(u'Maple and Blue Poem Ribbon'), Month.OCT, Group.RIBBON)
-MAPLE = Card(_(u'Maple'), Month.OCT, Group.JUNK)
+DEER = Card('단풍 - 끗', Month.OCT, Group.ANIMAL)
+MAPLE_BLUE_POEM = Card('단풍 - 청단', Month.OCT, Group.RIBBON)
+MAPLE = Card('단풍 - 피', Month.OCT, Group.JUNK)
 
-PHOENIX = Card(_(u'Paulownia and Phoenix'), Month.NOV, Group.BRIGHT)
-PAULOWNIA = Card(_(u'Paulownia'), Month.NOV, Group.JUNK)
-PAULOWNIA_2 = Card(_(u'Paulownia 2'), Month.NOV, Group.JUNK_2)
+PHOENIX = Card('오동 - 광', Month.NOV, Group.BRIGHT)
+PAULOWNIA = Card('오동 - 피', Month.NOV, Group.JUNK)
+PAULOWNIA_2 = Card('오동 - 쌍피', Month.NOV, Group.JUNK_2)
 
-RAIN = Card(_(u'Willow and Rain'), Month.DEC, Group.BRIGHT)
-SWALLOW = Card(_(u'Willow and Swallow'), Month.DEC, Group.ANIMAL)
-WILLOW_RED = Card(_(u'Willow and Red Ribbon'), Month.DEC, Group.RIBBON)
-WILLOW_2 = Card(_(u'Willow'), Month.DEC, Group.JUNK_2)
+RAIN = Card('비 - 광', Month.DEC, Group.BRIGHT)
+SWALLOW = Card('비 - 끗', Month.DEC, Group.ANIMAL)
+WILLOW_RED = Card('비 - 초단', Month.DEC, Group.RIBBON)
+WILLOW_2 = Card('비 - 쌍피', Month.DEC, Group.JUNK_2)
 
 
 ALL_CARDS = (
