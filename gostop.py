@@ -32,7 +32,7 @@ def main(argv):
 
         last_player = state.current_player
         state = state.generate_successor(action)
-        if (state.get_result(last_player) == 1):
+        if state.get_result(last_player) == 1:
             print('*** {0} wins!'.format(players[last_player]))
             break
 

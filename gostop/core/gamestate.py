@@ -13,6 +13,7 @@ class GameState(object):
     """The GameState specifies the complete state of the game, including the
     player's hands, cards on the table and scoring.
     """
+
     def __init__(self, prev_state=None):
         self.number_of_players = 2
         self.winner = None
@@ -21,18 +22,14 @@ class GameState(object):
             self.current_player = prev_state.current_player
             self.deck = Deck(cards=prev_state.deck)
             self.table_cards = TableCards(*prev_state.table_cards)
-            self.player_hands = \
-                [Hand(*cards) for cards in prev_state.player_hands]
-            self.taken_cards = \
-                [TakenCards(*cards) for cards in prev_state.taken_cards]
+            self.player_hands = [Hand(*cards) for cards in prev_state.player_hands]
+            self.taken_cards = [TakenCards(*cards) for cards in prev_state.taken_cards]
         else:
             self.current_player = 0
             self.deck = Deck()
             self.table_cards = TableCards()
-            self.player_hands = \
-            [Hand() for i in range(0, self.number_of_players)]
-            self.taken_cards = \
-                [TakenCards() for i in range(0, self.number_of_players)]
+            self.player_hands = [Hand() for i in range(0, self.number_of_players)]
+            self.taken_cards = [TakenCards() for i in range(0, self.number_of_players)]
 
     def __eq__(self, other):
         if other is None:
@@ -52,7 +49,7 @@ class GameState(object):
 
     def __hash__(self):
         return hash((self.current_player, self.deck, self.table_cards,
-                     zip(self.player_hands), zip(self.taken_cards)))
+        zip(self.player_hands), zip(self.taken_cards)))
 
     def __str__(self):
         out = 'Table: {0}\n'.format(str(self.table_cards))
@@ -96,7 +93,7 @@ class GameState(object):
                      [card for card in state.table_cards] + \
                      [card for tc in state.taken_cards for card in tc]
         unseen_cards = [card for card in Deck()
-                        if card not in seen_cards or seen_cards.remove(card)]
+            if card not in seen_cards or seen_cards.remove(card)]
 
         # Randomly deal the unseen cards to the other players
         random.shuffle(unseen_cards)
@@ -240,7 +237,7 @@ class GameStateCapture(GameState):
                      [card for card in state.table_cards] + \
                      [card for tc in state.taken_cards for card in tc]
         unseen_cards = [card for card in Deck()
-                        if card not in seen_cards or seen_cards.remove(card)]
+            if card not in seen_cards or seen_cards.remove(card)]
 
         # Randomly deal the unseen cards to the other players
         random.shuffle(unseen_cards)
@@ -300,7 +297,7 @@ class GameStateCapture(GameState):
             state = GameStateGoStop(prev_state=state)
         else:
             # Next player's turn
-            state.current_player = (state.current_player+1) % state.number_of_players
+            state.current_player = (state.current_player + 1) % state.number_of_players
         return state
 
 
@@ -317,7 +314,7 @@ class GameStateGoStop(GameState):
         """
         if type(action) == GameActionGo:
             state = GameStatePlay(prev_state=self)
-            state.current_player = (state.current_player+1) % state.number_of_players
+            state.current_player = (state.current_player + 1) % state.number_of_players
         else:
             state = GameStateEnd(prev_state=self)
             state.winner = self.current_player
